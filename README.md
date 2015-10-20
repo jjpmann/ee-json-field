@@ -10,6 +10,10 @@ The JSON field will validate input on the fly and give you feedback. Built on ht
 
 This field type only outputs raw data entered into the textarea. I will give you error output in the publish entry form if the json is not valid.
 
+### `{field:json_ld}`
+
+This will output the json with no whitespace wrapped in `<script type="application/ld+json"></script>` tags.
+
 ### `{field:pretty}`
 
 *Coming Soon*

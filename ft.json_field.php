@@ -29,6 +29,8 @@ class Json_Field_ft extends EE_Fieldtype
     /**
      * Replace pretty 
      *
+     *  {field:pretty}
+     *
      * @access  public
      * @param   field contents
      * @return  replacement text
@@ -37,6 +39,25 @@ class Json_Field_ft extends EE_Fieldtype
     public function replace_pretty($data, $params = array(), $tagdata = false)
     {
         return $data;
+    }
+
+    /**
+     * Replace JSON-LD 
+     *
+     *  {field:json_ld}
+     *
+     * @access  public
+     * @param   field contents
+     * @return  replacement text
+     *
+     */
+    public function replace_json_ld($data, $params = array(), $tagdata = false)
+    {
+        if (trim($data) != '') {
+            $data = preg_replace('/\s+/', '', trim($data));
+            return '<script type="application/ld+json">'.$data.'</script>';
+        }
+        return '';
     }
 
     /**
