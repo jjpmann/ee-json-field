@@ -257,3 +257,13 @@ class Json_Field_ft extends EE_Fieldtype
 
     }
 }
+
+if (!function_exists('ee')) {
+    function ee(){
+        static $EE;
+        if (!$EE) {
+            $EE =& get_instance();
+        }
+        return $EE;
+    }
+}
